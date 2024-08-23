@@ -79,6 +79,7 @@ return require("packer").startup(function()
 
   -- COLORSCHEME
   vim.cmd("colorscheme gruvbox")
+
   -- Adding the same comment color in each theme
   vim.cmd([[
 	augroup CustomCommentCollor

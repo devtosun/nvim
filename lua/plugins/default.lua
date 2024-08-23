@@ -19,7 +19,7 @@ vim.opt.scrollbind=false
 vim.opt.wildmenu=true
 
 
-vim.o.background = "dark"
+-- vim.o.background = "dark"
 -- vim.opt.guicursor = "i:block"
 
 vim.opt.tabstop = 4
@@ -40,8 +40,6 @@ vim.o.timeoutlen = 300
 vim.o.termguicolors = true
 
 
-
-
 vim.opt.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.opt.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
 vim.opt.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
@@ -59,4 +57,18 @@ vim.cmd([[autocmd InsertLeave * lua vim.cmd(':silent! write')]])
 
 -- Normal moddayken dosyadan ayrıldığınızda otomatik kaydetme
 vim.cmd([[autocmd BufLeave * lua vim.cmd(':silent! write')]])
+
+
+
+local keymap = vim.keymap -- for conciseness
+keymap.set("n", "<leader>go", ":GoFmt<CR>") 
+keymap.set("n", "<leader>go", ":GoImports<CR>") 
+
+keymap.set("v", "<C-K>", ":norm i//<CR>") 
+keymap.set("v", "<C-L>", ":norm xx<CR>") 
+
+-- :GoFmt - to format your code
+-- :GoImports - to format/clean your imports
+-- :GoInstallBinaries - to install the required binaries
+-- :GoUpdateBinaries - to update the required binaries
 

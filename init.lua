@@ -28,15 +28,3 @@ local lspconfig = require'lspconfig'
 
 lspconfig.gopls.setup{}
 
-
-
-
-
-
--- Insert modda Tab tuşuna basıldığında 4 boşluk atla
--- vim.api.nvim_set_keymap('i', '<leader><Tab>', '    ', { noremap = true, silent = true })
--- echo(vim.api.nvim_replace_termcodes("<Tab>", true, true, true))
--- vim.api.nvim_del_keymap('i', '<Tab>')
--- vim.api.nvim_set_keymap('i', '<Tab>', '    ', { noremap = true, silent = true })
---
-
