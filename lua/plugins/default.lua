@@ -1,5 +1,5 @@
 
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 vim.opt.encoding = "utf-8"
 
@@ -53,10 +53,10 @@ vim.api.nvim_set_keymap('i', '<S-Enter>', '<Esc>o', { noremap = true, silent = t
 
 
 -- Insert moddayken imleç hareket etmediğinde otomatik kaydetme
-vim.cmd([[autocmd InsertLeave * lua vim.cmd(':silent! write')]])
+--vim.cmd([[autocmd InsertLeave * lua vim.cmd(':silent! write')]])
 
 -- Normal moddayken dosyadan ayrıldığınızda otomatik kaydetme
-vim.cmd([[autocmd BufLeave * lua vim.cmd(':silent! write')]])
+--vim.cmd([[autocmd BufLeave * lua vim.cmd(':silent! write')]])
 
 
 
@@ -71,4 +71,10 @@ keymap.set("v", "<C-L>", ":norm xx<CR>")
 -- :GoImports - to format/clean your imports
 -- :GoInstallBinaries - to install the required binaries
 -- :GoUpdateBinaries - to update the required binaries
+
+
+
+
+
+
 

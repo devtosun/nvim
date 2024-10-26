@@ -6,7 +6,7 @@ bufferline.setup({
       buffer_close_icon = '', -- Boş bırakarak kapatma düğmesini devre dışı bırakın
       modified_icon = '',     -- Boş bırakarak değiştirilmiş simgeleri devre dışı bırakın
     },
-    clickable = false, -- Tablara tıklanabilirliği devre dışı bırakın
+    clickable = true, -- Tablara tıklanabilirliği devre dışı bırakın
     tabpages = true,   -- Geçerli/toplam sekme sayacını etkinleştirin
     icons = {
       buffer_index = true,

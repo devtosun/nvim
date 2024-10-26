@@ -69,6 +69,44 @@ return require("packer").startup(function()
 
   use { 'windwp/nvim-autopairs' }
 
+  -- flutter start
+  use {
+    'neovim/nvim-lspconfig',
+    config = function()
+      require'lspconfig'.dartls.setup{}
+    end
+  }
+
+  local on_attach = function(client, bufnr)
+    local buf_set_keymap = vim.api.nvim_buf_set_keymap
+    local opts = { noremap=true, silent=true }
+  
+    -- Tanıma gitmek için kısayol: 'gd'
+    buf_set_keymap(bufnr, 'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  
+    -- Uygun diğer LSP işlevlerini de buraya ekleyebilirsiniz
+  end
+  
+  require'lspconfig'.dartls.setup{
+    on_attach = on_attach,
+    cmd = { "dart", "language-server", "--protocol=lsp" },
+    filetypes = { "dart" },
+    root_dir = require('lspconfig').util.root_pattern("pubspec.yaml"),
+  }
+
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'saadparwaiz1/cmp_luasnip',
+      'L3MON4D3/LuaSnip',
+    },
+    config = function()
+      -- Tamamlama motoru ayarları buraya gelecek
+    end
+  }
+  -- flutter end
+
   -- GRUVBOX
   require("gruvbox").setup({
     contrast = "hard",
