@@ -72,7 +72,7 @@ keymap.set("v", "<C-L>", ":norm xx<CR>")
 -- :GoInstallBinaries - to install the required binaries
 -- :GoUpdateBinaries - to update the required binaries
 
-
+vim.api.nvim_set_keymap('n', 'gr', '<Cmd>Telescope lsp_references<CR>', { noremap = true, silent = true })
 
 
 
