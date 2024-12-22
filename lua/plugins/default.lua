@@ -72,8 +72,20 @@ keymap.set("v", "<C-L>", ":norm xx<CR>")
 -- :GoInstallBinaries - to install the required binaries
 -- :GoUpdateBinaries - to update the required binaries
 
+
+-- Referans Listesi
 vim.api.nvim_set_keymap('n', 'gr', '<Cmd>Telescope lsp_references<CR>', { noremap = true, silent = true })
 
+
+
+-- Proje genelindeki tüm hataları listele
+--vim.api.nvim_set_keymap('n', '<leader>ce', '<Cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
+--vim.api.nvim_set_keymap('n', '<leader>ce', '<Cmd>lua require("telescope.builtin").diagnostics({ cwd = vim.fn.getcwd() })<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ce', '<Cmd>lua require("telescope.builtin").diagnostics({ severity = vim.diagnostic.severity.ERROR })<CR>', { noremap = true, silent = true })
+
+
+-- Sadece mevcut dosyadaki hataları listele
+vim.api.nvim_set_keymap('n', '<leader>be', '<Cmd>Telescope diagnostics bufnr=0<CR>', { noremap = true, silent = true })
 
 
 
