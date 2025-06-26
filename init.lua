@@ -27,4 +27,3 @@ require("plugins.auto-pairs")
 local lspconfig = require'lspconfig'
 
 lspconfig.gopls.setup{}
-
